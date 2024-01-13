@@ -1,8 +1,23 @@
 function stringChop(str, size) {
-  // your code here
+  // Check if the input string is null or empty
+  if (str === null || str.length === 0) {
+    return [];
+  }
+
+  const chunks = [];
+  let index = 0;
+
+  while (index < str.length) {
+    // Extract a chunk of the specified size
+    const chunk = str.substring(index, index + size);
+    chunks.push(chunk);
+    index += size;
+  }
+
+  return chunks;
 }
 
-// Do not change the code below
+// Test cases
 const str = prompt("Enter String.");
 const size = prompt("Enter Chunk Size.");
 alert(stringChop(str, size));
